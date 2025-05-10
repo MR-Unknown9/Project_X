@@ -1,0 +1,255 @@
+/* CSS Variables for Theming */
+:root {
+  --font-family: "Courier Prime", monospace;
+
+  /* Light Mode Colors */
+  --color-bg: #fff8f0;
+  --color-text: #3e3e3e;
+  --color-description: #7a5c58;
+  --color-card-bg: #ffeeda;
+  --color-card-border: #ead7c4;
+  --color-footer: #a78c7a;
+  --color-nav-bg: #ffeeda;
+  --color-nav-text: #5a4a42;
+
+  /* Feature Colors (Shared) */
+  --color-mood: #d97706;
+  --color-journal: #a16207;
+  --color-audio: #92400e;
+  --color-crisis: #b91c1c;
+
+  /* Dark Mode Colors */
+  --color-bg-dark: #1c1c1c;
+  --color-text-dark: #f3f3f3;
+  --color-description-dark: #c9a892;
+  --color-card-bg-dark: #2a2a2a;
+  --color-card-border-dark: #3a3a3a;
+  --color-footer-dark: #bfae9e;
+  --color-nav-bg-dark: #2a2a2a;
+  --color-nav-text-dark: #f3f3f3;
+
+  /* Accent variants for dark mode features */
+  --color-mood-dark: #f59e0b;
+  --color-journal-dark: #d1a30d;
+  --color-audio-dark: #b45309;
+  --color-crisis-dark: #f87171;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+/* Header layout */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--color-nav-bg);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 60%; /* Make space for the navbar */
+}
+
+h1 {
+  font-size: 3rem; /* Increased font size for the title */
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between the icon and the text */
+}
+
+.description {
+  color: var(--color-description);
+  font-size: 1.25rem; /* Adjust font size */
+  margin-top: 0.5rem;
+  white-space: normal;
+  max-width: 100%;
+}
+
+body.dark header {
+  background-color: var(--color-nav-bg-dark); /* Dark Mode Header Background */
+}
+
+body.dark .description {
+  color: var(--color-description-dark);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-nav-bg);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  width: auto; /* Let the width adjust based on content */
+}
+
+body.dark nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-nav-bg-dark);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  width: auto; /* Let the width adjust based on content */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li {
+  font-size: 1.125rem;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-mood);
+}
+
+body.dark nav ul li a:hover {
+  color: var(--color-mood-dark);
+}
+
+/* Dark Mode Toggle Button */
+.dark-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: inherit;
+  transition: transform 0.3s ease;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: 1rem;
+}
+
+.dark-toggle:hover {
+  transform: rotate(-30deg); /* Rotate 180 degrees */
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card p {
+  color: #5a4a42;
+}
+
+body.dark .card {
+  background-color: var(--color-card-bg-dark);
+  border-color: var(--color-card-border-dark);
+}
+
+body.dark .card p {
+  color: var(--color-text-dark);
+}
+
+/* Feature Specific Headings in Dark Mode */
+body.dark .card h2[data-feature="mood"] {
+  color: var(--color-mood-dark);
+}
+
+body.dark .card h2[data-feature="journal"] {
+  color: var(--color-journal-dark);
+}
+
+body.dark .card h2[data-feature="audio"] {
+  color: var(--color-audio-dark);
+}
+
+body.dark .card h2[data-feature="crisis"] {
+  color: var(--color-crisis-dark);
+}
+
+/* Light mode feature headers */
+.card h2[data-feature="mood"] {
+  color: var(--color-mood);
+}
+
+.card h2[data-feature="journal"] {
+  color: var(--color-journal);
+}
+
+.card h2[data-feature="audio"] {
+  color: var(--color-audio);
+}
+
+.card h2[data-feature="crisis"] {
+  color: var(--color-crisis);
+}
+
+footer {
+  margin-top: 5rem;
+  font-size: 0.875rem;
+  color: var(--color-footer);
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-card-border);
+}
+
+body.dark footer {
+  color: var(--color-footer-dark);
+  border-top: 1px solid var(--color-card-border-dark);
+}

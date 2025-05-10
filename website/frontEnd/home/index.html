@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project X</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1><i class="fa-solid fa-brain icon"></i> Project_X</h1>
+        <p class="description">
+          Your mind matters — a space to check in, reflect, and grow.<br />
+          Built with empathy, designed for clarity.
+        </p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Mood Tracker</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Audio Notes</a></li>
+          <li><a href="#">Crisis</a></li>
+        </ul>
+      </nav>
+      <button
+        onclick="toggleDarkMode()"
+        class="dark-toggle"
+        title="Toggle Dark Mode"
+      >
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+      </button>
+    </header>
+
+    <section class="features">
+      <div class="card">
+        <h2 data-feature="mood">
+          <i class="fa-solid fa-chart-line icon"></i>Mood Tracker
+        </h2>
+        <p>
+          Log your mood, energy, and focus daily. Track your emotional rhythms.
+        </p>
+      </div>
+      <div class="card">
+        <h2 data-feature="journal">
+          <i class="fa-regular fa-note-sticky icon"></i>Journal Prompts
+        </h2>
+        <p>AI-generated questions to help you reflect and process your day.</p>
+      </div>
+      <div class="card">
+        <h2 data-feature="audio">
+          <i class="fa-solid fa-microphone icon"></i>Audio Notes
+        </h2>
+        <p>Record your thoughts when typing feels too hard.</p>
+      </div>
+      <div class="card">
+        <h2 data-feature="crisis">
+          <i class="fa-solid fa-triangle-exclamation icon"></i>Crisis Button
+        </h2>
+        <p>One tap for help when everything feels too much.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Built with love, therapy, and late-night thoughts — © Project X 2025
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
