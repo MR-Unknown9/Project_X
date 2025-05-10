@@ -43,7 +43,7 @@ Project X is a placeholder, but here are some names on the table:
 
 ## 🎯 Goals
 
-- Build a functioning MVP by **[Til Further Notice]**
+- Build a functioning MVP by **[Till Further Notice]**
 - Test with real users and iterate based on feedback.
 - Create both web and mobile versions.
 - Launch an open-source version for communities to adapt.
